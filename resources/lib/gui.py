@@ -163,6 +163,7 @@ class TransmissionGUI(xbmcgui.WindowXMLDialog):
                           STATUS_ICONS.get(torrent.status, 'pending.png'))
             l.setProperty('TorrentID', str(i))
             l.setProperty('TorrentProgress', "%3d%%" % torrent.progress)
+            l.setProperty('Progress', "%3d" % torrent.progress)
 
         removed = [
             id for id in self.list.keys() if id not in self.torrents.keys()
@@ -303,8 +304,11 @@ class TorrentInfoGUI(xbmcgui.WindowXMLDialog):
             'up': formatBytes(torrent.uploadedEver), 'ratio': torrent.ratio, \
             'status': torrent.status}
         if torrent.status is 'downloading':
-            statusline += " ETA: %(eta)s" % \
+            try:
+                statusline += " ETA: %(eta)s" % \
                     {'eta': torrent.eta}
+            except:
+                statusline += " ETA: N/A"
 
         labelName.setLabel(torrent.name)
         labelStatus.setLabel(statusline)
