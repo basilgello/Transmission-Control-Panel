@@ -29,8 +29,9 @@
     <source>https://github.com/basilgello/Transmission-Control-Panel</source>
     <news>
 Version 1.0.1
-* Fix torrent progress bar in main screen
-* Fix error with missing ETA (stalled torrents)
+* Fix torrent progress bar in main screen (thanks @AnonTester)
+* Fix error with missing ETA on stalled torrents (thanks @AnonTester)
+* Fix KeyError on torrent removal
 
 Version 1.0.0
 * Complete rework of original script.transmission by Correl J.Roush

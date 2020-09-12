@@ -296,7 +296,13 @@ class TorrentInfoGUI(xbmcgui.WindowXMLDialog):
         labelName = self.getControl(1)
         labelStatus = self.getControl(2)
         labelProgress = self.getControl(11)
-        torrent = self.transmission.info()[self.torrent_id]
+
+        # Catch KeyError which indicates the torrent has been removed by user
+        try:
+            torrent = self.transmission.info()[self.torrent_id]
+        except KeyError:
+            return
+
         files = self.transmission.get_files(self.torrent_id)[self.torrent_id]
 
         statusline = "[%(status)s] %(down)s down, %(up)s up (Ratio: %(ratio).2f)" % \
