@@ -163,6 +163,7 @@ class TransmissionGUI(xbmcgui.WindowXMLDialog):
                           STATUS_ICONS.get(torrent.status, 'pending.png'))
             l.setProperty('TorrentID', str(i))
             l.setProperty('TorrentProgress', "%3d%%" % torrent.progress)
+            l.setProperty('Progress', "%3d" % torrent.progress)
 
         removed = [
             id for id in self.list.keys() if id not in self.torrents.keys()
@@ -295,7 +296,13 @@ class TorrentInfoGUI(xbmcgui.WindowXMLDialog):
         labelName = self.getControl(1)
         labelStatus = self.getControl(2)
         labelProgress = self.getControl(11)
-        torrent = self.transmission.info()[self.torrent_id]
+
+        # Catch KeyError which indicates the torrent has been removed by user
+        try:
+            torrent = self.transmission.info()[self.torrent_id]
+        except KeyError:
+            return
+
         files = self.transmission.get_files(self.torrent_id)[self.torrent_id]
 
         statusline = "[%(status)s] %(down)s down, %(up)s up (Ratio: %(ratio).2f)" % \
@@ -303,8 +310,11 @@ class TorrentInfoGUI(xbmcgui.WindowXMLDialog):
             'up': formatBytes(torrent.uploadedEver), 'ratio': torrent.ratio, \
             'status': torrent.status}
         if torrent.status is 'downloading':
-            statusline += " ETA: %(eta)s" % \
+            try:
+                statusline += " ETA: %(eta)s" % \
                     {'eta': torrent.eta}
+            except:
+                statusline += " ETA: N/A"
 
         labelName.setLabel(torrent.name)
         labelStatus.setLabel(statusline)
