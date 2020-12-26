@@ -145,7 +145,7 @@ class TransmissionGUI(xbmcgui.WindowXMLDialog):
         list = self.getControl(120)
         self.torrents = self.transmission.info()
         for i, torrent in iteritems(self.torrents):
-            statusline = "[%(status)s] %(down)s down (%(pct).2f%%), %(up)s up (Ratio: %(ratio).2f)" % \
+            statusline = common.get_localized_string(32113) % \
                 {'down': formatBytes(torrent.downloadedEver), 'pct': torrent.progress, \
                 'up': formatBytes(torrent.uploadedEver), 'ratio': torrent.ratio, \
                 'status': torrent.status}
@@ -199,10 +199,12 @@ class TransmissionGUI(xbmcgui.WindowXMLDialog):
             # Remove selected torrent
             item = list.getSelectedItem()
             if item and xbmcgui.Dialog().yesno(
-                    common.get_localized_string(32000), 'Remove \'%s\'?' %
+                    common.get_localized_string(32000),
+                    common.get_localized_string(32004) %
                     self.torrents[int(item.getProperty('TorrentID'))].name):
                 remove_data = xbmcgui.Dialog().yesno(
-                    common.get_localized_string(32000), 'Remove data as well?')
+                    common.get_localized_string(32000),
+                    common.get_localized_string(32005))
                 self.transmission.remove(int(item.getProperty('TorrentID')),
                                          remove_data)
         if (controlID == 113):
