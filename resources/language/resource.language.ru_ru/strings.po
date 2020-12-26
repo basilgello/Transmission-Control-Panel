@@ -89,6 +89,10 @@ msgctxt "#32111"
 msgid "Status"
 msgstr "Статус"
 
+msgctxt "#32112"
+msgid "Torrent Details"
+msgstr "Детали торрента"
+
 msgctxt "#32113"
 msgid "[%(status)s] %(down)s down (%(pct).2f%%), %(up)s up (Ratio: %(ratio).2f)"
 msgstr "[%(status)s] Закачка: %(down)s (%(pct).2f%%), Отдача: %(up)s (Рейтинг: %(ratio).2f)"
