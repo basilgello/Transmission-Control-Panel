@@ -81,6 +81,10 @@ msgctxt "#32111"
 msgid "Status"
 msgstr "Статус"
 
+msgctxt "#32113"
+msgid "[%(status)s] %(down)s down (%(pct).2f%%), %(up)s up (Ratio: %(ratio).2f)"
+msgstr "[%(status)s] Закачка: %(down)s (%(pct).2f%%), Отдача: %(up)s (Рейтинг: %(ratio).2f)"
+
 msgctxt "#32200"
 msgid "Browse for torrent file"
 msgstr "Выбрать торрент-файл"

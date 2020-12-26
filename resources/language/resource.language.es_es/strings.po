@@ -81,6 +81,10 @@ msgctxt "#32111"
 msgid "Status"
 msgstr "Estado"
 
+msgctxt "#32113"
+msgid "[%(status)s] %(down)s down (%(pct).2f%%), %(up)s up (Ratio: %(ratio).2f)"
+msgstr ""
+
 msgctxt "#32200"
 msgid "Browse for torrent file"
 msgstr "Buscar un archivo torrent"
