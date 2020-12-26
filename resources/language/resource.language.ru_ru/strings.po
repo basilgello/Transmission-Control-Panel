@@ -41,6 +41,14 @@ msgctxt "#32003"
 msgid "Open settings dialog?"
 msgstr "Открыть окно настроек?"
 
+msgctxt "#32004"
+msgid "Remove '%s'?"
+msgstr "Удалить '%s'?"
+
+msgctxt "#32005"
+msgid "Remove data as well?"
+msgstr "Удалить также и данные?"
+
 msgctxt "#32101"
 msgid "Add"
 msgstr "Добавить"

@@ -41,6 +41,14 @@ msgctxt "#32003"
 msgid "Open settings dialog?"
 msgstr ""
 
+msgctxt "#32004"
+msgid "Remove '%s'?"
+msgstr "'%s' 를 제거 하시겠습니까?"
+
+msgctxt "#32005"
+msgid "Remove data as well?"
+msgstr "데이터도 제거 하시겠습니까?"
+
 msgctxt "#32101"
 msgid "Add"
 msgstr "추가"

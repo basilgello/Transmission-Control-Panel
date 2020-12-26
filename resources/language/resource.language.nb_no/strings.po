@@ -48,6 +48,14 @@ msgctxt "#32003"
 msgid "Open settings dialog?"
 msgstr "Åpne instillinger?"
 
+msgctxt "#32004"
+msgid "Remove '%s'?"
+msgstr "Fjern '%s'?"
+
+msgctxt "#32005"
+msgid "Remove data as well?"
+msgstr "Fjern data også?"
+
 # Buttons
 # empty strings from id 32004 to 32100
 msgctxt "#32101"

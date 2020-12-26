@@ -41,6 +41,14 @@ msgctxt "#32003"
 msgid "Open settings dialog?"
 msgstr ""
 
+msgctxt "#32004"
+msgid "Remove '%s'?"
+msgstr "Eltávolítja az '%s'-et?"
+
+msgctxt "#32005"
+msgid "Remove data as well?"
+msgstr "Eltávolítja az adatokat is?"
+
 msgctxt "#32101"
 msgid "Add"
 msgstr "Hozzáadás"
